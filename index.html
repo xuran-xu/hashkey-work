@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 词汇表</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <!-- Add Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Add Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
+    <style>
+        /* Debug panel styles */
+        #debug-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 9999;
+            display: none;
+        }
+        #debug-panel.visible {
+            display: block;
+        }
+        .debug-entry {
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 5px;
+        }
+        .debug-toggle {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        
+        /* Error message styling */
+        .error-message {
+            background-color: #fff5f5;
+            color: #e53e3e;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #e53e3e;
+        }
+        .technical-details {
+            margin-top: 15px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+        .technical-details pre {
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 8px;
+            background-color: #eee;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="Chain-横-黑字.png" alt="Logo" class="logo-image">
+            </div>
+        </header>
+
+        <!-- Controls Area -->
+        <div class="controls">
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <select id="categorySelect" aria-label="选择类别">
+                    <option value="all">All Categories</option>
+                    <option value="tech">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="wallet_identity">Wallet & Identity</option>
+                    <option value="nft_metaverse">NFT & Gaming</option>
+                    <option value="governance">Governance</option>
+                    <option value="other">Others</option>
+                </select>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search terms..." aria-label="Search vocabulary">
+                <span class="search-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </span>
+                <button id="clearSearch" aria-label="清除搜索">×</button>
+            </div>
+        </div>
+
+        <!-- Vocabulary Grid -->
+        <div id="vocabularyGrid" class="vocabulary-grid" role="grid">
+            <!-- Vocabulary cards will be dynamically inserted here -->
+        </div>
+        
+        <!-- Content Panel -->
+        <div id="contentPanel" class="content-panel" aria-hidden="true">
+            <button id="retractBtn" class="retract-button" aria-label="返回词汇列表">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 19L8 12L15 5" stroke="#6B46C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="content-header">
+                <h2>词汇详情</h2>
+            </div>
+            <div id="contentDisplay" class="content-display">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Debug Panel -->
+    <div id="debug-panel"></div>
+    <button class="debug-toggle" id="debugToggle">Debug</button>
+    
+    <script>
+    // Simple debug logger
+    window.debugLog = function(message) {
+        const debugPanel = document.getElementById('debug-panel');
+        const entry = document.createElement('div');
+        entry.className = 'debug-entry';
+        entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        debugPanel.appendChild(entry);
+        debugPanel.scrollTop = debugPanel.scrollHeight;
+        
+        // Also log to console
+        console.log(message);
+    };
+    
+    // Toggle debug panel
+    document.getElementById('debugToggle').addEventListener('click', function() {
+        const debugPanel = document.getElementById('debug-panel');
+        debugPanel.classList.toggle('visible');
+    });
+    
+    // Override fetch to log requests
+    const originalFetch = window.fetch;
+    window.fetch = function(url, options) {
+        debugLog(`Fetching: ${url}`);
+        return originalFetch(url, options)
+            .then(response => {
+                debugLog(`Response for ${url}: ${response.status} ${response.statusText}`);
+                return response;
+            })
+            .catch(error => {
+                debugLog(`Error fetching ${url}: ${error.message}`);
+                throw error;
+            });
+    };
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+[
+    {
+        "type": "Technology",
+        "id": "blockchain",
+        "title": "Blockchain",
+        "description": "A distributed, immutable, and transparent digital ledger that records transactions across many computers.",
+        "content": "content\tech\blockchain.md"
+    },
+    {
+        "type": "Technology",
+        "id": "cryptography",
+        "title": "Cryptography",
+        "description": "The science of secure communication techniques that allow only the sender and intended recipient of a message to view its contents.",
+        "content": "content\tech\cryptography.md"
+    },
+    {
+        "type": "Technology",
+        "id": "hash",
+        "title": "Hash / Hashing",
+        "description": "A function that converts an input of letters and numbers into an encrypted output of a fixed length.",
+        "content": "Hashing takes an input (or 'message') and returns a fixed-size string of bytes. The output (the 'hash' or 'digest') is unique to a given input. Hashes are used extensively in blockchains to ensure data integrity, link blocks together, and create digital fingerprints of data."
+    },
+    {
+        "type": "Technology",
+        "id": "decentralization",
+        "title": "Decentralization",
+        "description": "The transfer of control and decision-making from a centralized entity (individual, organization, or group) to a distributed network.",
+        "content": "Decentralization is a core principle of Web3. Instead of relying on a single central authority, control and data are distributed across a network of participants, reducing single points of failure and censorship potential."
+    },
+    {
+        "type": "Technology",
+        "id": "smart-contract",
+        "title": "Smart Contract",
+        "description": "Self-executing contracts with the terms of the agreement directly written into code, running on a blockchain.",
+        "content": "Smart contracts automatically execute, control, or document legally relevant events and actions according to the terms of a contract or an agreement. They run on a decentralized blockchain network, making them transparent, immutable, and eliminating the need for a central intermediary."
+    },
+    {
+        "type": "Technology",
+        "id": "dapp",
+        "title": "dApp (Decentralized Application)",
+        "description": "An application built on a decentralized network, combining a frontend user interface with backend smart contracts.",
+        "content": "Unlike traditional web apps that run on centralized servers, dApps run on a peer-to-peer blockchain network. Their backend logic is typically executed by smart contracts, ensuring transparency, censorship resistance, and potentially user ownership of data."
+    },
+    {
+        "type": "Technology",
+        "id": "pow",
+        "title": "Proof-of-Work (PoW)",
+        "description": "A consensus mechanism where miners solve complex computational puzzles to validate transactions and create new blocks.",
+        "content": "PoW requires participants (miners) to expend computational power (work) to solve a cryptographic puzzle. The first miner to solve it gets to add the next block to the blockchain and is rewarded. Bitcoin uses PoW. It's secure but energy-intensive."
+    },
+    {
+        "type": "Technology",
+        "id": "pos",
+        "title": "Proof-of-Stake (PoS)",
+        "description": "A consensus mechanism where validators are chosen to create new blocks based on the number of coins they hold and are willing to 'stake'.",
+        "content": "In PoS, validators lock up their own cryptocurrency (their 'stake') for the chance to be randomly selected to propose and attest to new blocks. Validators are rewarded for participation but risk losing their stake ('slashing') for malicious behavior. PoS is generally more energy-efficient than PoW."
+    },
+    {
+        "type": "Technology",
+        "id": "ethereum-merge",
+        "title": "The Merge (Ethereum Consensus Layer)",
+        "description": "Ethereum's transition from a Proof-of-Work (PoW) to a Proof-of-Stake (PoS) consensus mechanism in September 2022.",
+        "content": "The Merge refers to the event where the original Ethereum Mainnet (Execution Layer using PoW) merged with its new Proof-of-Stake consensus layer, the Beacon Chain. This shift significantly reduced Ethereum's energy consumption and set the stage for further scalability upgrades like sharding."
+    },
+    {
+        "type": "Technology",
+        "id": "layer-1",
+        "title": "Layer 1 (L1)",
+        "description": "The base blockchain protocol itself (e.g., Bitcoin, Ethereum, Solana).",
+        "content": "Layer 1 refers to the underlying main blockchain architecture. It handles its own transaction processing, consensus, and data availability. Scalability challenges on Layer 1 often lead to the development of Layer 2 solutions."
+    },
+    {
+        "type": "Technology",
+        "id": "layer-2",
+        "title": "Layer 2 (L2)",
+        "description": "Protocols built on top of a Layer 1 blockchain to improve scalability and transaction speed.",
+        "content": "Layer 2 solutions process transactions off the main Layer 1 chain but ultimately derive their security from it. Examples include Rollups (Optimistic and ZK), State Channels, and Sidechains. They aim to reduce fees (gas costs) and increase throughput."
+    },
+    {
+        "type": "Technology",
+        "id": "rollups",
+        "title": "Rollups",
+        "description": "A type of Layer 2 scaling solution that bundles (rolls up) many transactions off-chain and posts compressed data to the Layer 1 chain.",
+        "content": "Rollups execute transactions outside Layer 1 but post transaction data back to Layer 1, inheriting its security. There are two main types: Optimistic Rollups (assuming transactions are valid unless challenged) and Zero-Knowledge (ZK) Rollups (using cryptographic proofs to validate transactions)."
+    },
+    {
+        "type": "Technology",
+        "id": "zk-proofs",
+        "title": "Zero-Knowledge Proofs (ZKPs)",
+        "description": "Cryptographic methods allowing one party (the prover) to convince another (the verifier) that a statement is true, without revealing any information beyond the truth of the statement itself.",
+        "content": "ZKPs are crucial for privacy and scaling in Web3. ZK-Rollups use them to validate off-chain transactions efficiently. They can also be used for private transactions or verifying identity without revealing sensitive data."
+    },
+    {
+        "type": "Technology",
+        "id": "state-channels",
+        "title": "State Channels",
+        "description": "A Layer 2 technique enabling multiple blockchain interactions off-chain, with only the initial and final states recorded on-chain.",
+        "content": "Participants lock funds in an on-chain contract and can then perform numerous transactions privately and instantly off-chain. Only when the channel is closed is the final net result submitted to the main chain. This significantly reduces transaction costs and increases speed for frequent interactions between specific parties."
+    },
+    {
+        "type": "Technology",
+        "id": "sidechains",
+        "title": "Sidechains",
+        "description": "Independent blockchains linked to a main blockchain (parent chain) via a two-way peg, allowing assets to move between them.",
+        "content": "Sidechains run parallel to a main chain. They have their own consensus mechanisms and security models, which might differ from the main chain. While offering scalability, their security is typically independent of the Layer 1 they connect to."
+    },
+    {
+        "type": "Technology",
+        "id": "oracle",
+        "title": "Oracle",
+        "description": "A service that connects smart contracts with real-world data and events existing outside the blockchain.",
+        "content": "Blockchains are deterministic systems and cannot directly access off-chain data (like weather information, price feeds, or sports results). Oracles act as trusted third-party data feeds that provide external information to smart contracts, triggering their execution based on real-world conditions."
+    },
+    {
+        "type": "Technology",
+        "id": "ipfs",
+        "title": "IPFS (InterPlanetary File System)",
+        "description": "A peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open by storing data decentrally.",
+        "content": "Instead of location-based addressing (like URLs), IPFS uses content-based addressing. Files are stored across a distributed network of nodes. It's often used in Web3 for storing NFT metadata or hosting decentralized websites and dApp frontends."
+    },
+    {
+        "type": "Technology",
+        "id": "evm",
+        "title": "EVM (Ethereum Virtual Machine)",
+        "description": "The runtime environment for smart contracts on Ethereum and other EVM-compatible blockchains.",
+        "content": "The EVM is like a global, decentralized computer that executes smart contract code written in languages like Solidity. It handles the state changes on the Ethereum blockchain. Many other Layer 1 and Layer 2 blockchains are EVM-compatible, meaning they can run Ethereum smart contracts."
+    },
+    {
+        "type": "Technology",
+        "id": "mev",
+        "title": "MEV (Maximal Extractable Value / Miner Extractable Value)",
+        "description": "The maximum value that can be extracted from block production by including, excluding, or reordering transactions within a block.",
+        "content": "Block producers (miners in PoW, validators in PoS) can manipulate the order of transactions within the blocks they produce to capture value from opportunities like DEX arbitrage, liquidations, or front-running. MEV is a complex topic with implications for network efficiency and fairness. Strategies like 'sandwich attacks' are a form of MEV extraction."
+    },
+    {
+        "type": "Technology",
+        "id": "account-abstraction",
+        "title": "Account Abstraction (AA)",
+        "description": "A concept allowing user accounts (Externally Owned Accounts - EOAs) to behave more like smart contracts, enabling features like social recovery, batch transactions, and gas payments in different tokens.",
+        "content": "Traditionally, Ethereum has EOAs (controlled by private keys) and Contract Accounts. Account Abstraction aims to unify these, giving user accounts programmable features without needing a separate smart contract wallet. This improves user experience by enabling more flexible security models, automating actions, and allowing gas fee sponsorship."
+    },
+    {
+        "type": "finance",
+        "id": "defi",
+        "title": "DeFi (Decentralized Finance)",
+        "description": "An ecosystem of financial applications built on blockchain technology, operating without central intermediaries.",
+        "content": "DeFi aims to recreate traditional financial systems (like lending, borrowing, trading, insurance) in an open, permissionless, and transparent manner using smart contracts on blockchains. Users interact directly with protocols."
+    },
+    {
+        "type": "finance",
+        "id": "dex",
+        "title": "DEX (Decentralized Exchange)",
+        "description": "A cryptocurrency exchange that allows users to trade directly peer-to-peer via smart contracts, without a central intermediary.",
+        "content": "Unlike centralized exchanges (CEXs), DEXs operate on-chain. Users retain custody of their funds throughout the trading process. Many DEXs use Automated Market Makers (AMMs) instead of traditional order books."
+    },
+    {
+        "type": "finance",
+        "id": "amm",
+        "title": "AMM (Automated Market Maker)",
+        "description": "A type of decentralized exchange protocol that relies on mathematical formulas and liquidity pools to price assets.",
+        "content": "AMMs use smart contracts to automatically set prices based on the ratio of assets held in a liquidity pool. Users trade against the pool rather than directly with other users. Uniswap and Curve are prominent examples of AMMs."
+    },
+    {
+        "type": "finance",
+        "id": "liquidity-pool",
+        "title": "Liquidity Pool",
+        "description": "A collection of tokens locked in a smart contract, used to facilitate trading on decentralized exchanges using AMMs.",
+        "content": "Users called Liquidity Providers (LPs) contribute pairs of assets to a pool and receive LP tokens in return. These pools provide the liquidity needed for traders to swap assets. LPs typically earn trading fees generated by the pool."
+    },
+    {
+        "type": "finance",
+        "id": "yield-farming",
+        "title": "Yield Farming",
+        "description": "The practice of staking or lending crypto assets to generate high returns or rewards in the form of additional cryptocurrency.",
+        "content": "Yield farming involves strategically moving crypto assets between different DeFi protocols (lending platforms, liquidity pools) to maximize returns. It often involves earning governance tokens or a share of transaction fees. Strategies can be complex and carry risks like impermanent loss and smart contract bugs."
+    },
+    {
+        "type": "finance",
+        "id": "staking",
+        "title": "Staking",
+        "description": "The act of locking up cryptocurrency holdings to support the operations of a blockchain network (like PoS) or provide liquidity, typically in return for rewards.",
+        "content": "Staking has two primary contexts: 1) In Proof-of-Stake networks, users stake tokens to participate in consensus and earn block rewards. 2) In DeFi, users can stake tokens (e.g., LP tokens) in protocols to earn yields or governance rights."
+    },
+    {
+        "type": "finance",
+        "id": "stablecoin",
+        "title": "Stablecoin",
+        "description": "A type of cryptocurrency designed to maintain a stable value relative to a specific asset, typically a fiat currency like the US dollar.",
+        "content": "Stablecoins aim to mitigate the price volatility common in cryptocurrencies. They achieve stability through various mechanisms, such as being backed by fiat reserves (e.g., USDC, USDT), crypto-collateral (e.g., DAI), or algorithmic processes (which have faced challenges)."
+    },
+    {
+        "type": "finance",
+        "id": "impermanent-loss",
+        "title": "Impermanent Loss",
+        "description": "A potential temporary loss of funds experienced by liquidity providers in AMMs due to volatility in a trading pair.",
+        "content": "When the price ratio of assets in a liquidity pool changes compared to when a provider deposited them, the value of their withdrawal might be less than simply holding the assets. It's 'impermanent' because if prices return to the original ratio, the loss disappears, but it becomes permanent if the provider withdraws at a disadvantageous ratio. Trading fees earned may offset this loss."
+    },
+    {
+        "type": "finance",
+        "id": "sandwich-attack",
+        "title": "Sandwich Attack",
+        "description": "An MEV strategy where an attacker front-runs and back-runs a victim's trade on a DEX to profit from the induced price change.",
+        "content": "An attacker observes a large pending trade in the mempool. They place a trade just before the victim's ('front-running') to push the price up (or down), let the victim's trade execute at a worse price, and then place another trade immediately after ('back-running') in the opposite direction to profit from the price difference they created. This exploits the slippage tolerance set by the victim."
+    },
+    {
+        "type": "finance",
+        "id": "flash-loan",
+        "title": "Flash Loan",
+        "description": "An uncollateralized loan that must be borrowed and repaid within the same blockchain transaction.",
+        "content": "Flash loans allow users to borrow large amounts of capital with no upfront collateral, provided the loan is repaid (plus a fee) by the end of the very same transaction block. They are atomic; if the repayment cannot be completed, the entire transaction (including the initial loan) reverts. Used commonly in arbitrage, collateral swaps, and sometimes exploits."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "wallet",
+        "title": "Wallet (Crypto Wallet)",
+        "description": "A digital tool that allows users to store, manage, send, and receive cryptocurrencies and interact with dApps.",
+        "content": "Wallets store public and private keys, which are necessary to manage crypto assets. They come in various forms: software (desktop, mobile, web), hardware (physical devices), and paper. They can be custodial (third-party holds keys) or non-custodial (user controls keys)."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "non-custodial-wallet",
+        "title": "Non-Custodial Wallet",
+        "description": "A wallet where the user has sole control over their private keys and seed phrase.",
+        "content": "With non-custodial wallets (e.g., MetaMask, Ledger, Trezor), the user is fully responsible for securing their keys. 'Not your keys, not your crypto' emphasizes the importance of self-custody provided by these wallets."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "seed-phrase",
+        "title": "Seed Phrase / Recovery Phrase",
+        "description": "A list of words (typically 12 or 24) which store all the information needed to recover a crypto wallet.",
+        "content": "The seed phrase is the master key derived from which all the wallet's private keys are generated. Losing the seed phrase means losing access to the funds if the wallet device is lost or damaged. It must be kept extremely secure and offline."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "private-key",
+        "title": "Private Key",
+        "description": "A secret cryptographic code, known only to the wallet owner, used to sign transactions and prove ownership of funds.",
+        "content": "The private key allows spending the cryptocurrency associated with a public address. Compromising a private key means losing control over the corresponding funds. Wallets manage private keys, often derived from the seed phrase."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "public-key",
+        "title": "Public Key",
+        "description": "A cryptographic code derived from a private key, used to generate a public address for receiving funds.",
+        "content": "The public key can be shared openly without compromising security. It's used to verify digital signatures made with the corresponding private key. A wallet address is typically derived from the public key."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "ens",
+        "title": "ENS (Ethereum Name Service)",
+        "description": "A distributed, open, and extensible naming system based on the Ethereum blockchain.",
+        "content": "ENS maps human-readable names (like 'vitalik.eth') to machine-readable identifiers such as Ethereum addresses, content hashes (IPFS), and metadata. It simplifies sharing addresses and interacting with the Web3 ecosystem."
+    },
+    {
+        "type": "wallet_identity",
+        "id": "did",
+        "title": "DID (Decentralized Identifier)",
+        "description": "A new type of globally unique identifier that does not require a centralized registration authority.",
+        "content": "DIDs enable verifiable, decentralized digital identity. They are controlled by the identity owner (user or organization) and can be associated with cryptographic keys and other verification methods to prove identity claims without relying on traditional identity providers."
+    },
+    {
+        "type": "nft_metaverse",
+        "id": "nft",
+        "title": "NFT (Non-Fungible Token)",
+        "description": "A unique digital asset representing ownership of a specific item or piece of content, recorded on a blockchain.",
+        "content": "Unlike fungible tokens (like cryptocurrencies, where each unit is interchangeable), each NFT is unique and cannot be replicated. They are used to represent ownership of digital art, collectibles, virtual land, event tickets, and more."
+    },
+    {
+        "type": "nft_metaverse",
+        "id": "minting",
+        "title": "Minting",
+        "description": "The process of creating a new NFT on the blockchain.",
+        "content": "Minting involves publishing a unique token onto the blockchain, making it part of the distributed ledger. This typically involves associating metadata (like the digital art file or description) with the token and paying a gas fee to record the creation transaction."
+    },
+    {
+        "type": "nft_metaverse",
+        "id": "metaverse",
+        "title": "Metaverse",
+        "description": "A collective virtual shared space, created by the convergence of virtually enhanced physical reality and physically persistent virtual space.",
+        "content": "In the Web3 context, the Metaverse often refers to persistent, interconnected 3D virtual worlds where users can interact, socialize, play games, conduct business, and own digital assets (like land or avatars as NFTs). Decentralization and user ownership are key differentiating factors from traditional virtual worlds."
+    },
+    {
+        "type": "nft_metaverse",
+        "id": "sbt",
+        "title": "Soulbound Token (SBT)",
+        "description": "A type of non-transferable NFT representing a person's identity, commitments, credentials, or affiliations.",
+        "content": "Proposed by Vitalik Buterin and others, SBTs are designed to be permanently bound to a specific digital identity ('Soul'). Unlike standard NFTs, they cannot be sold or transferred. Potential use cases include proof of attendance, educational certificates, credit scores, or representing DAO membership."
+    },
+    {
+        "type": "governance",
+        "id": "dao",
+        "title": "DAO (Decentralized Autonomous Organization)",
+        "description": "An organization represented by rules encoded as computer programs (smart contracts) controlled by members, often using governance tokens.",
+        "content": "DAOs operate transparently and decentrally. Decisions are typically made through voting by members who hold governance tokens. They are used to manage DeFi protocols, NFT projects, grant funds, and other collective ventures without traditional hierarchical management."
+    },
+    {
+        "type": "governance",
+        "id": "governance-token",
+        "title": "Governance Token",
+        "description": "A token that grants holders voting rights within a specific dApp, protocol, or DAO.",
+        "content": "Holders of governance tokens can propose changes, vote on proposals related to the project's development, treasury management, or protocol parameters. This mechanism allows for decentralized community-led governance."
+    },
+    {
+        "type": "other",
+        "id": "token",
+        "title": "Token",
+        "description": "A digital asset representing utility, value, or ownership, built on top of an existing blockchain.",
+        "content": "Tokens can represent various things: a currency (like stablecoins), voting rights (governance tokens), access to a service (utility tokens), or ownership of a unique item (NFTs). Common standards include ERC-20 (fungible tokens on Ethereum) and ERC-721 (NFTs on Ethereum)."
+    },
+    {
+        "type": "other",
+        "id": "gas-fee",
+        "title": "Gas Fee",
+        "description": "The fee required to successfully conduct a transaction or execute a contract on a blockchain network like Ethereum.",
+        "content": "Gas refers to the computational effort required to execute operations. Fees are paid in the network's native cryptocurrency (e.g., ETH on Ethereum) and compensate miners/validators for processing and validating transactions. Prices fluctuate based on network demand."
+    },
+    {
+        "type": "other",
+        "id": "web3",
+        "title": "Web3",
+        "description": "The concept of a decentralized iteration of the internet built upon blockchain technology.",
+        "content": "Web3 envisions an internet where users control their own data, identity, and digital assets, facilitated by decentralized networks, cryptocurrencies, and NFTs. It emphasizes concepts like decentralization, blockchain technology, and token-based economics, contrasting with the centralized platform dominance of Web 2.0."
+    },
+    {
+        "type": "Technology",
+        "id": "merkle-tree",
+        "title": "Merkle Tree",
+        "description": "A tree structure where each leaf node is a hash of a data block, and each non-leaf node is a hash of its children.",
+        "contentPath": "content/tech/merkle-tree.md"
+    },
+    {
+        "type": "Technology",
+        "id": "rpc",
+        "title": "RPC (Remote Procedure Call)",
+        "description": "A protocol allowing a program to request a service from a program located on another computer in a network.",
+        "contentPath": "content/tech/rpc.md"
+    },
+    {
+        "type": "Technology",
+        "id": "abi",
+        "title": "ABI (Application Binary Interface)",
+        "description": "The standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction.",
+        "contentPath": "content/tech/abi.md"
+    },
+    {
+        "type": "Technology",
+        "id": "wasm",
+        "title": "WASM (WebAssembly)",
+        "description": "A binary instruction format for a stack-based virtual machine, often considered as a potential high-performance alternative or complement to the EVM.",
+        "contentPath": "content/tech/wasm.md"
+    },
+    {
+        "type": "Technology",
+        "id": "risc-v",
+        "title": "RISC-V",
+        "description": "An open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Explored as a potential future replacement for the EVM.",
+        "contentPath": "content/tech/risc-v.md"
+    },
+    {
+        "type": "Technology",
+        "id": "zk-snark",
+        "title": "zk-SNARKs",
+        "description": "Zero-Knowledge Succinct Non-Interactive Argument of Knowledge. A type of ZKP known for small proof sizes and fast verification.",
+        "contentPath": "content/tech/zk-snark.md"
+    },
+    {
+        "type": "Technology",
+        "id": "zk-stark",
+        "title": "zk-STARKs",
+        "description": "Zero-Knowledge Scalable Transparent Argument of Knowledge. A type of ZKP that requires no trusted setup but has larger proof sizes.",
+        "contentPath": "content/tech/zk-stark.md"
+    },
+    {
+        "type": "Technology",
+        "id": "cross-chain-bridge",
+        "title": "Cross-Chain Bridge",
+        "description": "A connection that allows the transfer of information (e.g., tokens, data) from one blockchain network to another.",
+        "contentPath": "content/tech/cross-chain-bridge.md"
+    },
+    {
+        "type": "Technology",
+        "id": "reentrancy-attack",
+        "title": "Reentrancy Attack",
+        "description": "A common smart contract vulnerability where an external contract call is allowed to call back into the calling contract before the initial interaction is finished.",
+        "contentPath": "content/tech/reentrancy-attack.md"
+    },
+    {
+        "type": "Technology",
+        "id": "51-percent-attack",
+        "title": "51% Attack",
+        "description": "An attack on a blockchain (usually PoW) where a single entity or group controls more than 50% of the network's hashing power.",
+        "contentPath": "content/tech/51-percent-attack.md"
+    },
+    {
+        "type": "Technology",
+        "id": "gas-optimization",
+        "title": "Gas Optimization",
+        "description": "The practice of writing smart contract code in a way that minimizes the computational cost (gas) required for execution.",
+        "contentPath": "content/tech/gas-optimization.md"
+    },
+    {
+        "type": "Technology",
+        "id": "patricia-trie",
+        "title": "Patricia Trie (MPT)",
+        "description": "Modified Merkle Patricia Trie. The primary data structure used in Ethereum to store key-value pairs for account states and transactions.",
+        "contentPath": "content/tech/patricia-trie.md"
+    },
+    {
+        "type": "Technology",
+        "id": "consensus",
+        "title": "Consensus Mechanism",
+        "description": "The process by which nodes in a distributed network agree on the current state of the blockchain.",
+        "contentPath": "content/tech/consensus.md"
+    }
+]

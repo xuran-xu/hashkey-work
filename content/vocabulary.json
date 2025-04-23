@@ -1,0 +1,23 @@
+[
+  {
+    "id": "blockchain",
+    "type": "tech",
+    "title": "Blockchain",
+    "description": "A distributed, immutable, and transparent digital ledger that records transactions across many computers.",
+    "contentPath": "content/blockchain.md"
+  },
+  {
+    "id": "cryptography",
+    "type": "tech",
+    "title": "Cryptography",
+    "description": "The science of secure communication techniques that allow only the sender and intended recipient of a message to view its contents.",
+    "contentPath": "content/cryptography.md"
+  },
+  {
+    "id": "smart-contract",
+    "type": "tech",
+    "title": "Smart Contract",
+    "description": "Self-executing contracts with the terms of the agreement directly written into code, running on a blockchain.",
+    "contentPath": "content/smart-contract.md"
+  }
+] 
