@@ -563,14 +563,14 @@ document.addEventListener('DOMContentLoaded', () => {
             type: '技术',
             title: 'Blockchain',
             description: 'A distributed, immutable, and transparent digital ledger that records transactions across many computers.',
-            contentPath: 'content/blockchain.md'
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/blockchain.md'
         },
         {
             id: 'cryptography',
             type: '技术',
             title: 'Cryptography',
             description: 'The science of secure communication techniques that allow only the sender and intended recipient of a message to view its contents.',
-            contentPath: 'content/cryptography.md'
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/cryptography.md'
         },
         {
             id: 'smart_contract',
