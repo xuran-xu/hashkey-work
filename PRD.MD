@@ -257,3 +257,18 @@ Optimize padding and font sizes slightly for mobile if needed.
 代码注释: AI 生成的代码应包含必要的注释，解释关键逻辑和 CSS 规则。
 
 请将此文档提供给 AI 代码生成器，它应该能根据这些详细需求生成相应的 HTML, CSS, 和 JavaScript 代码。
+
+
+新的颜色要求:
+主要颜色（亮色模式）
+背景色: #FFFFFF (--background: 0 0% 100%)
+前景色/文本: #0C0A09 (--foreground: 20 14.3% 4.1%)
+主色调: #1A1613 (--primary: 24 9.8% 10%)
+次要色调: #F5F5F4 (--secondary: 60 4.8% 95.9%)
+强调色: #F5F5F4 (--accent: 60 4.8% 95.9%)
+边框色: #E6E6E3 (--border: 20 5.9% 90%)
+
+字体
+代码字体: Geist Mono (--font-geist-mono)
+常规字体: Geist Sans (--font-geist-sans)
+
