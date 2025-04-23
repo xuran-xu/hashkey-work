@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (matchesCategory) {
                 const card = createVocabularyCard(item);
-                card.style.animationDelay = `${index * 50}ms`;
                 vocabularyGrid.appendChild(card);
                 cardCount++;
             }
@@ -406,7 +405,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear the grid
         vocabularyGrid.innerHTML = '';
         let hasVisibleCards = false;
-        let delay = 0;
         let cardCount = 0;
 
         // Apply filters to each vocabulary item
@@ -445,11 +443,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // If it passes both filters, create and add the card
             if (matchesCategory && matchesSearch) {
                 const card = createVocabularyCard(item);
-                card.style.animationDelay = `${delay}ms`;
                 card.classList.add('fade-in');
                 vocabularyGrid.appendChild(card);
                 hasVisibleCards = true;
-                delay += 50;
                 cardCount++;
             }
         });
