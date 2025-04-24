@@ -9,17 +9,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const clearSearchBtn = document.getElementById('clearSearch');
     const categorySelect = document.getElementById('categorySelect');
+    const themeToggle = document.getElementById('themeToggle');
+    const lightIcon = document.getElementById('lightIcon');
+    const darkIcon = document.getElementById('darkIcon');
     
     // Check if DOM elements are found
     console.log('DOM elements found:', {
         vocabularyGrid: !!vocabularyGrid,
         contentPanel: !!contentPanel,
         categorySelect: !!categorySelect,
-        searchInput: !!searchInput
+        searchInput: !!searchInput,
+        themeToggle: !!themeToggle
     });
     
     // Variable to store vocabulary data
     let vocabularyData = [];
+    
+    // Theme functionality
+    function initializeTheme() {
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+            // 切换Logo
+            document.querySelector('.light-logo').classList.add('hidden');
+            document.querySelector('.dark-logo').classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            lightIcon.classList.remove('hidden');
+            darkIcon.classList.add('hidden');
+            // 切换Logo
+            document.querySelector('.light-logo').classList.remove('hidden');
+            document.querySelector('.dark-logo').classList.add('hidden');
+        }
+    }
+    
+    function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+            // Switch to light mode
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            lightIcon.classList.remove('hidden');
+            darkIcon.classList.add('hidden');
+            // 切换Logo到亮色
+            document.querySelector('.light-logo').classList.remove('hidden');
+            document.querySelector('.dark-logo').classList.add('hidden');
+        } else {
+            // Switch to dark mode
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+            // 切换Logo到暗色
+            document.querySelector('.light-logo').classList.add('hidden');
+            document.querySelector('.dark-logo').classList.remove('hidden');
+        }
+    }
+    
+    // Initialize theme
+    initializeTheme();
     
     // Load vocabulary data from JSON file
     async function loadVocabularyData() {
@@ -121,6 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', handleSearch);
         clearSearchBtn.addEventListener('click', clearSearch);
         
+        // Theme toggle
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
         // Category filter - add explicit function to debug
         categorySelect.addEventListener('change', function() {
             console.log('Category changed to:', categorySelect.value);
@@ -143,6 +200,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle browser navigation
         window.addEventListener('popstate', handlePopState);
+        
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.documentElement.classList.add('dark');
+                    lightIcon.classList.add('hidden');
+                    darkIcon.classList.remove('hidden');
+                    // 切换Logo到暗色
+                    document.querySelector('.light-logo').classList.add('hidden');
+                    document.querySelector('.dark-logo').classList.remove('hidden');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    lightIcon.classList.remove('hidden');
+                    darkIcon.classList.add('hidden');
+                    // 切换Logo到亮色
+                    document.querySelector('.light-logo').classList.remove('hidden');
+                    document.querySelector('.dark-logo').classList.add('hidden');
+                }
+            }
+        });
     }
 
     // Create vocabulary cards

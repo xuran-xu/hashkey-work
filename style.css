@@ -1,6 +1,6 @@
 /* CSS Variables for Theming and Fonts based on PRD requirements */
 :root {
-    /* Colors from PRD */
+    /* Colors from PRD - Light Mode */
     --primary-color: #7C3AED; /* Vivid Violet - Main interactive color */
     --primary-light: #EDE9FE; /* Light Violet - Hover background */
     --primary-dark: #6D28D9; /* Darker Violet - Optional for borders/details */
@@ -38,6 +38,22 @@
     --transition-timing: ease-in-out;
 }
 
+/* Dark theme colors */
+.dark {
+    --primary-color: #A78BFA; /* Lighter Violet for dark mode */
+    --primary-light: #4C1D95; /* Darker Violet for dark mode hover */
+    --primary-dark: #8B5CF6; /* Medium Violet for dark mode borders/details */
+    --text-color: #E5E7EB; /* Gray 200 - Body text in dark mode */
+    --text-color-heading: #F9FAFB; /* Gray 50 - Headings in dark mode */
+    --text-color-subtle: #9CA3AF; /* Gray 400 - Descriptions in dark mode */
+    --background-color: #111827; /* Gray 900 - Page background in dark mode */
+    --background-content: #1F2937; /* Gray 800 - Content area in dark mode */
+    --border-color: #374151; /* Gray 700 - Borders in dark mode */
+    --box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --box-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --focus-ring: 0 0 0 2px #A78BFA;
+}
+
 /* Basic Reset & Body Styling */
 * {
     box-sizing: border-box;
@@ -55,6 +71,7 @@ body {
     -webkit-font-smoothing: antialiased; /* Added antialiased rendering */
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: var(--letter-spacing);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,6 +106,12 @@ h2 {
 .logo-image {
     max-height: 48px;
     width: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo visibility classes */
+.dark-logo, .light-logo {
+    transition: opacity 0.3s ease;
 }
 
 /* Controls Area */
@@ -250,12 +273,16 @@ h2 {
     right: -100%;
     width: 68%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--background-content);
     padding: 0;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, background-color 0.3s ease;
     z-index: 1000;
     display: flex;
+}
+
+.dark .content-panel {
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .content-panel.show {
@@ -272,7 +299,7 @@ h2 {
 
 .content-header {
     margin-bottom: 2rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 1rem;
 }
 
@@ -484,7 +511,7 @@ h2 {
 /* Panel Active State */
 body.panel-active .vocabulary-grid {
     grid-template-columns: repeat(1, 1fr);
-    width: 30%;
+    width: 25%;
 }
 
 /* No Results Message */
@@ -538,7 +565,7 @@ body.panel-active .vocabulary-grid {
     }
     
     .content-panel {
-        width: 80%;
+        width: 75%;
     }
     
     body.panel-active .vocabulary-grid {
@@ -568,4 +595,40 @@ body.panel-active .vocabulary-grid {
     .vocabulary-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: var(--space-4);
+}
+
+.theme-toggle-button {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) var(--transition-timing),
+                color var(--transition-duration) var(--transition-timing);
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.hidden {
+    display: none;
 }
