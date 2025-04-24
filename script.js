@@ -555,11 +555,130 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback data in case the external file doesn't load
     window.fallbackVocabularyData = [
         {
+            id: 'risc-v',
+            type: '技术',
+            title: 'RISC-V',
+            description: 'An open standard Instruction Set Architecture (ISA) based on Reduced Instruction Set Computer principles, with potential blockchain applications.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/risc-v.md'
+        },
+        {
+            id: 'rpc',
+            type: '技术',
+            title: 'RPC',
+            description: 'Remote Procedure Call, a protocol that allows programs to request services from other computers without understanding network details.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/rpc.md'
+        },
+        {
+            id: 'patricia-trie',
+            type: '技术',
+            title: 'Patricia Trie',
+            description: 'A data structure used in Ethereum to efficiently store key-value pairs and maintain the state of the blockchain.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/Patricia Trie.md'
+        },
+        {
+            id: 'gas-optimization',
+            type: '技术',
+            title: 'Gas Optimization',
+            description: 'Techniques to reduce the computational cost (gas fees) of executing smart contracts on blockchain networks.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/Gas optimization.md'
+        },
+        {
+            id: '51-percent-attack',
+            type: '技术',
+            title: '51% Attack',
+            description: 'A potential attack on blockchain networks where an entity controls over 50% of the network\'s hash rate, potentially compromising security.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/51-percent-attack.md'
+        },
+        {
+            id: 'zk-snark',
+            type: '技术',
+            title: 'zk-SNARK',
+            description: 'Zero-Knowledge Succinct Non-Interactive Argument of Knowledge, a cryptographic method to prove knowledge without revealing the information itself.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/zk-snark.md'
+        },
+        {
+            id: 'reentrancy-attack',
+            type: '技术',
+            title: 'Reentrancy Attack',
+            description: 'A smart contract vulnerability where an attacker repeatedly calls a function that withdraws funds before the contract can update its state.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/Reentrancy Attack.md'
+        },
+        {
+            id: 'cross-chain-bridge',
+            type: '技术',
+            title: 'Cross-Chain Bridge',
+            description: 'Technology that enables the transfer of assets and information between different blockchain networks.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/Cross-Chain Bridge.md'
+        },
+        {
+            id: 'zk-stark',
+            type: '技术',
+            title: 'zk-STARK',
+            description: 'Zero-Knowledge Scalable Transparent Argument of Knowledge, a cryptographic proof technology that doesn\'t require a trusted setup.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/zk-stark.md'
+        },
+        {
+            id: 'rollups',
+            type: '技术',
+            title: 'Rollups',
+            description: 'Layer 2 scaling solutions that execute transactions off-chain but store transaction data on the main blockchain.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/rollups.md'
+        },
+        {
             id: 'blockchain',
             type: '技术',
             title: 'Blockchain',
             description: 'A distributed, immutable, and transparent digital ledger that records transactions across many computers.',
             contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/blockchain.md'
+        },
+        {
+            id: 'ethereum-merge',
+            type: '技术',
+            title: 'Ethereum Merge',
+            description: 'The transition of Ethereum from Proof of Work to Proof of Stake consensus mechanism, significantly reducing energy consumption.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/ethereum-merge.md'
+        },
+        {
+            id: 'layer-1',
+            type: '技术',
+            title: 'Layer 1',
+            description: 'The base blockchain architecture that handles all operations including transaction processing, validation, and consensus.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/layer-1.md'
+        },
+        {
+            id: 'layer-2',
+            type: '技术',
+            title: 'Layer 2',
+            description: 'Secondary protocols built on top of Layer 1 blockchains that aim to solve scalability and transaction speed issues.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/layer-2.md'
+        },
+        {
+            id: 'pos',
+            type: '技术',
+            title: 'PoS',
+            description: 'Proof of Stake consensus mechanism where validators are selected to create blocks based on the quantity of cryptocurrency they hold and stake.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/pos.md'
+        },
+        {
+            id: 'pow',
+            type: '技术',
+            title: 'PoW',
+            description: 'Proof of Work consensus mechanism where miners compete to solve complex mathematical puzzles to validate transactions and create new blocks.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/pow.md'
+        },
+        {
+            id: 'zk-proofs',
+            type: '技术',
+            title: 'Zero-Knowledge Proofs',
+            description: 'Cryptographic methods allowing one party to prove to another that a statement is true without revealing any additional information.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/zk-proofs.md'
+        },
+        {
+            id: 'merkle-tree',
+            type: '技术',
+            title: 'Merkle Tree',
+            description: 'A data structure used in blockchain to efficiently verify the integrity of large sets of data and transactions.',
+            contentPath: 'https://raw.githubusercontent.com/xuran-xu/hashkey-work/main/content/tech/merkle-tree.md'
         },
         {
             id: 'cryptography',
@@ -600,22 +719,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 'dao',
-            type: '治理',
+            type: '技术',
             title: 'DAO',
             description: 'Decentralized Autonomous Organization - an organization represented by rules encoded as a computer program, transparent and controlled by shareholders.',
             content: `
                 <h1>Decentralized Autonomous Organization (DAO)</h1>
                 <p>A DAO is an organization represented by rules encoded as a computer program that is transparent, controlled by organization members, and not influenced by a central authority. DAOs operate on blockchain technology and use governance tokens for voting and decision-making.</p>
-            `
-        },
-        {
-            id: 'wallet',
-            type: '钱包与身份',
-            title: 'Wallet',
-            description: 'A tool that allows users to store, send, and receive cryptocurrency and manage their blockchain-based assets.',
-            content: `
-                <h1>Cryptocurrency Wallet</h1>
-                <p>A cryptocurrency wallet is a digital tool that allows users to store, send, and receive cryptocurrency and manage their blockchain-based assets. Rather than storing actual coins or tokens, wallets store the private keys that prove ownership of digital assets on the blockchain.</p>
             `
         },
         {

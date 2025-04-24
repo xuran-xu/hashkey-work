@@ -337,20 +337,6 @@
     },
     {
         "type": "Technology",
-        "id": "abi",
-        "title": "ABI (Application Binary Interface)",
-        "description": "The standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction.",
-        "contentPath": "content/tech/abi.md"
-    },
-    {
-        "type": "Technology",
-        "id": "wasm",
-        "title": "WASM (WebAssembly)",
-        "description": "A binary instruction format for a stack-based virtual machine, often considered as a potential high-performance alternative or complement to the EVM.",
-        "contentPath": "content/tech/wasm.md"
-    },
-    {
-        "type": "Technology",
         "id": "risc-v",
         "title": "RISC-V",
         "description": "An open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Explored as a potential future replacement for the EVM.",
@@ -405,11 +391,4 @@
         "description": "Modified Merkle Patricia Trie. The primary data structure used in Ethereum to store key-value pairs for account states and transactions.",
         "contentPath": "content/tech/patricia-trie.md"
     },
-    {
-        "type": "Technology",
-        "id": "consensus",
-        "title": "Consensus Mechanism",
-        "description": "The process by which nodes in a distributed network agree on the current state of the blockchain.",
-        "contentPath": "content/tech/consensus.md"
-    }
 ]

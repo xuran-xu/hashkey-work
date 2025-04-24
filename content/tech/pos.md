@@ -60,7 +60,6 @@ Proof-of-Stake is **highly relevant** to HashKey Chain. According to the provide
 *   **PoA Component:** Proof of Authority means that validators are not just chosen based on stake, but they are also pre-approved, known entities considered trustworthy ('Authorities'). This creates a more permissioned or consortium-like structure compared to fully permissionless PoS networks.
 *   **Hybrid Benefits:** This hybrid approach aims to combine the energy efficiency and validator incentives of PoS with the potentially higher performance and controlled security environment of PoA, often suitable for enterprise or regulated use cases.
 
-Therefore, developers deploying smart contracts or interacting with HashKey Chain should be aware that its underlying security relies on validators having both significant stake (economic incentive) and recognized authority (reputation/permission).
 
 ## Code Examples (Conceptual)
 
@@ -134,6 +133,4 @@ contract SlashingMechanism {
 *   **Stake Lock-up Periods:** Often, unstaking requires a waiting period ("unbonding period"), reducing liquidity for validators.
 *   **Validator Onboarding/Offboarding:** Can sometimes be slower or more complex than simply starting/stopping mining in PoW.
 
-## Conclusion
 
-Proof-of-Stake represents a significant evolution in blockchain consensus mechanisms, offering a compelling solution to the energy demands of Proof-of-Work. By leveraging economic incentives and penalties (staking and slashing), PoS provides robust security for many leading blockchain networks, including the current Ethereum network and specialized chains like HashKey Chain (in conjunction with PoA). While it introduces different potential challenges, its efficiency and alignment with sustainable technology goals have driven its widespread adoption.
