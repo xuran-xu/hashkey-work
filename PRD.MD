@@ -259,16 +259,27 @@ Optimize padding and font sizes slightly for mobile if needed.
 请将此文档提供给 AI 代码生成器，它应该能根据这些详细需求生成相应的 HTML, CSS, 和 JavaScript 代码。
 
 
-新的颜色要求:
-主要颜色（亮色模式）
-背景色: #FFFFFF (--background: 0 0% 100%)
-前景色/文本: #0C0A09 (--foreground: 20 14.3% 4.1%)
-主色调: #1A1613 (--primary: 24 9.8% 10%)
-次要色调: #F5F5F4 (--secondary: 60 4.8% 95.9%)
-强调色: #F5F5F4 (--accent: 60 4.8% 95.9%)
-边框色: #E6E6E3 (--border: 20 5.9% 90%)
-
-字体
-代码字体: Geist Mono (--font-geist-mono)
-常规字体: Geist Sans (--font-geist-sans)
-
+字体设计:
+主要字体系列：
+正文字体：Space Grotesk
+代码字体：Space Mono
+字体使用方式：
+这些字体通过Next.js的字体系统从Google Fonts导入
+使用CSS变量定义：
+正文字体：--font-geist-sans
+代码字体：--font-geist-mono
+字体特性：
+两种字体都使用拉丁字符集（subsets: ["latin"]）
+字体权重：400（regular）
+使用swap显示策略，确保在字体加载过程中仍能看到文本
+应用场景：
+正文使用Space Grotesk，为现代无衬线字体，提供清晰可读的内容展示
+代码块、代码片段使用Space Mono，为等宽字体，确保代码对齐和易读性
+markdown内容使用这些字体设置，配合适当的字体大小和行高
+样式设置：
+通过tailwind的Typography插件设置prose样式
+代码文本大小：text-sm（小号）
+代码行高：leading-6（1.5倍行高）
+抗锯齿渲染：antialiased
+稍宽的字符间距：tracking-wide
+这些字体设计为HashKey Chain文档提供了现代、专业和易读的排版效果，无论是阅读文档内容还是查看代码示例。
