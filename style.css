@@ -483,6 +483,10 @@ h2 {
     background-color: rgba(0, 0, 0, 0.02);
 }
 
+.dark .content-display tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); /* 暗色模式下表格交替行背景 */
+}
+
 .content-display code {
     background-color: rgba(0, 0, 0, 0.05);
     padding: 2px var(--space-1);
@@ -491,12 +495,20 @@ h2 {
     font-size: 0.9em;
 }
 
+.dark .content-display code {
+    background-color: rgba(255, 255, 255, 0.1); /* 暗色模式下的代码块背景 */
+}
+
 .content-display pre {
     background-color: rgba(0, 0, 0, 0.05);
     padding: var(--space-3);
     border-radius: var(--border-radius);
     overflow-x: auto;
     margin: var(--space-4) 0;
+}
+
+.dark .content-display pre {
+    background-color: rgba(255, 255, 255, 0.05); /* 暗色模式下的代码块容器背景 */
 }
 
 .content-display pre code {
